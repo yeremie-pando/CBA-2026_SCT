@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Automata name="Untitled" major="0" minor="9">
+<Automaton name="EAH" type="Specification">
+	<Events>
+		<Event id="0" label="H_ContT1"/>
+		<Event id="1" label="H_ContT2"/>
+		<Event id="2" label="H_Disable"/>
+		<Event id="3" label="L1_d_LO" controllable="false"/>
+		<Event id="4" label="L1_d_SAFE" controllable="false"/>
+		<Event id="5" label="L1_u_HI_HI" controllable="false"/>
+		<Event id="6" label="L1_u_SAFE" controllable="false"/>
+		<Event id="7" label="L2_Overflow" controllable="false"/>
+		<Event id="8" label="L2_Underflow" controllable="false"/>
+		<Event id="9" label="L2_d_HI" controllable="false"/>
+		<Event id="10" label="L2_d_LO" controllable="false"/>
+		<Event id="11" label="L2_d_LO_LO" controllable="false"/>
+		<Event id="12" label="L2_d_SP" controllable="false"/>
+		<Event id="13" label="L2_u_HI" controllable="false"/>
+		<Event id="14" label="L2_u_HI_HI" controllable="false"/>
+		<Event id="15" label="L2_u_LO" controllable="false"/>
+		<Event id="16" label="L2_u_SP" controllable="false"/>
+		<Event id="17" label="P_off"/>
+		<Event id="18" label="P_on"/>
+		<Event id="19" label="Start"/>
+		<Event id="20" label="Stop" controllable="false"/>
+		<Event id="21" label="T1_d_SAFE" controllable="false"/>
+		<Event id="22" label="T1_u_HI_HI" controllable="false"/>
+		<Event id="23" label="V_Close"/>
+		<Event id="24" label="V_Open"/>
+		<Event id="25" label="V_PID"/>
+	</Events>
+	<States>
+		<State id="0" name="q0" initial="true" accepting="true"/>
+		<State id="1" name="q1" accepting="true"/>
+	</States>
+	<Transitions>
+		<Transition source="0" dest="1" event="0"/>
+		<Transition source="0" dest="1" event="1"/>
+		<Transition source="0" dest="1" event="2"/>
+		<Transition source="0" dest="0" event="19"/>
+		<Transition source="0" dest="0" event="20"/>
+		<Transition source="0" dest="0" event="7"/>
+		<Transition source="0" dest="0" event="8"/>
+		<Transition source="0" dest="0" event="9"/>
+		<Transition source="0" dest="0" event="10"/>
+		<Transition source="0" dest="0" event="11"/>
+		<Transition source="0" dest="0" event="12"/>
+		<Transition source="0" dest="0" event="13"/>
+		<Transition source="0" dest="0" event="14"/>
+		<Transition source="0" dest="0" event="15"/>
+		<Transition source="0" dest="0" event="16"/>
+		<Transition source="0" dest="0" event="3"/>
+		<Transition source="0" dest="0" event="4"/>
+		<Transition source="0" dest="0" event="5"/>
+		<Transition source="0" dest="0" event="6"/>
+		<Transition source="0" dest="0" event="21"/>
+		<Transition source="0" dest="0" event="22"/>
+		<Transition source="0" dest="0" event="17"/>
+		<Transition source="0" dest="0" event="18"/>
+		<Transition source="0" dest="0" event="23"/>
+		<Transition source="0" dest="0" event="24"/>
+		<Transition source="0" dest="0" event="25"/>
+		<Transition source="1" dest="0" event="19"/>
+		<Transition source="1" dest="0" event="20"/>
+		<Transition source="1" dest="0" event="7"/>
+		<Transition source="1" dest="0" event="8"/>
+		<Transition source="1" dest="0" event="13"/>
+		<Transition source="1" dest="0" event="14"/>
+		<Transition source="1" dest="0" event="15"/>
+		<Transition source="1" dest="0" event="16"/>
+		<Transition source="1" dest="0" event="9"/>
+		<Transition source="1" dest="0" event="10"/>
+		<Transition source="1" dest="0" event="11"/>
+		<Transition source="1" dest="0" event="12"/>
+		<Transition source="1" dest="0" event="3"/>
+		<Transition source="1" dest="0" event="4"/>
+		<Transition source="1" dest="0" event="5"/>
+		<Transition source="1" dest="0" event="6"/>
+		<Transition source="1" dest="0" event="21"/>
+		<Transition source="1" dest="0" event="22"/>
+		<Transition source="1" dest="0" event="17"/>
+		<Transition source="1" dest="0" event="18"/>
+		<Transition source="1" dest="0" event="23"/>
+		<Transition source="1" dest="0" event="24"/>
+		<Transition source="1" dest="0" event="25"/>
+	</Transitions>
+</Automaton>
+</Automata>

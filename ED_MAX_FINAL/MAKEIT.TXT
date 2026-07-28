@@ -1,0 +1,143 @@
+****** 1. Modelagem da Planta
+
+G = Create (8640,73260)
+
+****** 2. Modelagem das Especificações 
+
+
+EAB = Create(EAB,[mark 0,1],[tran [0,0,0],[0,2,0],[0,4,0],[0,6,0],[0,8,0],
+      [0,10,0],[0,12,0],[0,14,0],[0,16,0],[0,18,0],[0,20,0],[0,21,0],[0,31
+      ,1],[0,33,1],[0,50,0],[0,52,0],[0,54,0],[0,56,0],[0,60,0],[0,62,0],[
+      1,0,0],[1,2,0],[1,4,0],[1,6,0],[1,8,0],[1,10,0],[1,12,0],[1,14,0],[1
+      ,16,0],[1,18,0],[1,20,0],[1,21,0],[1,50,0],[1,52,0],[1,54,0],[1,56,0
+      ],[1,60,0],[1,62,0]])  (2,38)
+
+EAH = Create(EAH,[mark 0,1],[tran [0,0,0],[0,2,0],[0,4,0],[0,6,0],[0,8,0],
+      [0,10,0],[0,12,0],[0,14,0],[0,16,0],[0,18,0],[0,20,0],[0,21,0],[0,31
+      ,0],[0,33,0],[0,41,0],[0,43,0],[0,45,0],[0,50,0],[0,52,0],[0,54,0],[
+      0,56,0],[0,60,0],[0,62,0],[0,71,1],[0,73,1],[0,75,1],[1,0,0],[1,2,0]
+      ,[1,4,0],[1,6,0],[1,8,0],[1,10,0],[1,12,0],[1,14,0],[1,16,0],[1,18,0
+      ],[1,20,0],[1,21,0],[1,31,0],[1,33,0],[1,41,0],[1,43,0],[1,45,0],[1,
+      50,0],[1,52,0],[1,54,0],[1,56,0],[1,60,0],[1,62,0]])  (2,49)
+
+EAV = Create(EAV,[mark 0,1],[tran [0,0,0],[0,2,0],[0,4,0],[0,6,0],[0,8,0],
+      [0,10,0],[0,12,0],[0,14,0],[0,16,0],[0,18,0],[0,20,0],[0,21,0],[0,41
+      ,1],[0,43,1],[0,45,1],[0,50,0],[0,52,0],[0,54,0],[0,56,0],[0,60,0],[
+      0,62,0],[1,0,0],[1,2,0],[1,4,0],[1,6,0],[1,8,0],[1,10,0],[1,12,0],[1
+      ,14,0],[1,16,0],[1,18,0],[1,20,0],[1,21,0],[1,50,0],[1,52,0],[1,54,0
+      ],[1,56,0],[1,60,0],[1,62,0]])  (2,39)
+
+EIBV = Create(EIBV,[mark 0,1,2],[tran [0,33,0],[0,41,0],[0,43,1],[1,31,2],
+       [1,33,1],[1,41,0],[1,43,1],[2,31,2],[2,33,1],[2,43,2],[2,45,2]])  (
+       3,11)
+
+EL1H = Create(EL1H,[mark 0],[tran [0,50,1],[1,52,2],[1,56,0],[1,71,1],[2,4
+       5,2],[2,54,1],[2,71,2],[2,73,2]])  (3,8)
+
+EL2H = Create(EL2H,[mark 0],[tran [0,2,1],[1,18,0],[1,73,1]])  (2,3)
+
+EM = Create(EM,[mark 0,1,2,3],[tran [0,0,0],[0,21,1],[0,33,0],[0,41,0],[0,
+     54,0],[1,0,1],[1,4,2],[1,20,0],[1,31,1],[1,43,1],[1,52,1],[1,54,1],[1
+     ,71,1],[2,4,2],[2,20,0],[2,31,2],[2,33,2],[2,41,2],[2,43,2],[2,45,2],
+     [2,52,2],[2,54,3],[2,71,2],[2,73,2],[3,0,3],[3,4,3],[3,20,0],[3,31,3]
+     ,[3,43,3],[3,52,2],[3,54,3],[3,71,3]])  (4,32)
+
+EPH = Create(EPH,[mark 0],[tran [0,31,1],[0,33,0],[1,31,1],[1,33,0],[1,73,
+      1]])  (2,5)
+
+ETS1H = Create(ETS1H,[mark 0],[tran [0,60,1],[0,71,0],[0,73,0],[1,62,0]]) 
+         (2,4)
+
+EVH = Create(EVH,[mark 0],[tran [0,41,0],[0,43,1],[0,45,1],[1,41,0],[1,43,
+      1],[1,45,1],[1,73,1]])  (2,7)
+
+SIGMA = Allevents(G.DES)  (1,26)
+
+SIGMA_OV = Create(SIGMA_OV,[mark 0],[tran [0,0,0],[0,2,0],[0,4,0],[0,6,0],
+           [0,8,0],[0,12,0],[0,14,0],[0,16,0],[0,18,0],[0,20,0],[0,21,0],[
+           0,31,0],[0,33,0],[0,41,0],[0,43,0],[0,45,0],[0,50,0],[0,52,0],[
+           0,54,0],[0,56,0],[0,60,0],[0,62,0],[0,71,0],[0,73,0],[0,75,0]])
+             (1,25)
+
+KAB = Sync(EAB,SIGMA)  (2,50)  Blocked_events = None  
+
+KAH = Sync(EAH,SIGMA)  (2,49)  Blocked_events = None  
+
+KAV = Sync(EAV,SIGMA)  (2,49)  Blocked_events = None  
+
+KIBV = Sync(EIBV,SIGMA)  (3,74)  Blocked_events = None  
+
+KL1H = Sync(EL1H,SIGMA)  (3,65)  Blocked_events = None  
+
+KL2H = Sync(EL2H,SIGMA)  (2,49)  Blocked_events = None  
+
+KM = Sync(EM,SIGMA_OV)  (4,80)  Blocked_events = None  
+
+KPH = Sync(EPH,SIGMA)  (2,51)  Blocked_events = None  
+
+KTS1H = Sync(ETS1H,SIGMA)  (2,48)  Blocked_events = None  
+
+KVH = Sync(EVH,SIGMA)  (2,51)  Blocked_events = None  
+
+
+****** 3a. Síntese de Supervisor Monolítico
+
+
+K = Meet(KAB,KAH,KAV,KIBV,KL1H,KL2H,KM,KPH,KTS1H,KVH)  (736,9318)
+
+S = Supcon(G,K)  (2190,6082)
+
+S = Condat(G,S)  Controllable.
+
+SR = Supreduce(G,S,S)  (276,934;slb=265)
+
+SR = Condat(G,SR)  Controllable.
+
+
+****** 3b. Síntese de Supervisores Modulares
+
+
+SAB = Supcon(G,KAB)  (8649,64719)
+
+SAH = Supcon(G,KAH)  (11880,90360)
+
+SAV = Supcon(G,KAV)  (8646,60366)
+
+SIBV = Supcon(G,KIBV)  (6840,49920)
+
+SL1H = Supcon(G,KL1H)  (5800,41960)
+
+SL2H = Supcon(G,KL2H)  (8348,69212)
+
+SM = Supcon(G,KM)  (2904,16924)
+
+SPH = Supcon(G,KPH)  (8280,66420)
+
+STS1H = Supcon(G,KTS1H)  (7200,54600)
+
+SVH = Supcon(G,KVH)  (8400,68700)
+
+SM = Condat(G,SM)  Controllable.
+
+SRM = Supreduce(G,SM,SM)  (31,269;slb=31)
+
+GCONF = Meet(SAB,SAH,SAV,SIBV,SL1H,SL2H,SM,SPH,STS1H,SVH)  (2302,6382)
+
+GCONFT = Trim(GCONF)  (2190,6082)
+
+SCOORD = Supcon(GCONF,SIGMA)  (2190,6082)
+
+SCOORD = Condat(GCONF,SCOORD)  Controllable.
+
+SRCOORD = Supreduce(GCONF,SCOORD,SCOORD)  (5,34;slb=3)
+
+SRCOORD = Condat(GCONF,SRCOORD)  Uncontrollable.
+
+SRCOORD = Condat(GCONF,SRCOORD)  Uncontrollable.
+
+GCONF_SRCOORD = Sync(GCONF,SRCOORD)  (2190,6082)  Blocked_events = None  
+
+SRCOORD_S = Sync(SRCOORD,SIGMA)  (5,104)  Blocked_events = None  
+
+SRCOORD = Condat(GCONF,SRCOORD_S)  Controllable.
+

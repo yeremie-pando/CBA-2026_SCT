@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Automata name="Untitled" major="0" minor="9">
+<Automaton name="EL1H" type="Specification">
+	<Events>
+		<Event id="0" label="H_ContT1"/>
+		<Event id="1" label="H_ContT2"/>
+		<Event id="2" label="L1_d_LO" controllable="false"/>
+		<Event id="3" label="L1_d_SAFE" controllable="false"/>
+		<Event id="4" label="L1_u_HI_HI" controllable="false"/>
+		<Event id="5" label="L1_u_SAFE" controllable="false"/>
+		<Event id="6" label="V_PID"/>
+	</Events>
+	<States>
+		<State id="0" name="L1_LO" initial="true" accepting="true"/>
+		<State id="1" name="L1_SAFE"/>
+		<State id="2" name="T1_HI_HI"/>
+	</States>
+	<Transitions>
+		<Transition source="0" dest="1" event="5"/>
+		<Transition source="1" dest="2" event="4"/>
+		<Transition source="1" dest="0" event="2"/>
+		<Transition source="1" dest="1" event="0"/>
+		<Transition source="2" dest="1" event="3"/>
+		<Transition source="2" dest="2" event="6"/>
+		<Transition source="2" dest="2" event="1"/>
+		<Transition source="2" dest="2" event="0"/>
+	</Transitions>
+</Automaton>
+</Automata>

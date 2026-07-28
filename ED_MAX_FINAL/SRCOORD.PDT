@@ -1,0 +1,14 @@
+SRCOORD
+
+
+Control data are displayed as a list of supervisor states
+where disabling occurs, together with the events that must
+be disabled there.
+
+SRCOORD is CONTROLLABLE
+
+control data:
+
+
+       2:  31                                  3:  33   41   45 
+
