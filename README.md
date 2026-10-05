@@ -56,7 +56,7 @@ Os nomes dos arquivos refletem a notação matemática adotada no artigo:
 ## Resultados
 
 Os resultados experimentais demonstram que a ação reativa e minimamente restritiva dos supervisores modulares garante o cumprimento de todas as restrições físicas do processo (prevenção de transbordamento, esvaziamento e queima das resistências). A topologia assegura autonomia e segurança com robustez perante perturbações e limitações de comunicação inerentes a redes industriais legadas.
-![image alt](https://github.com/yeremie-pando/CBA-2026_SCT/blob/f868c2540a6fcf12d9c69da0a27ce06a4ef81f71/grafico_resultados_final%20(1).pdf) 
+![image alt](https://github.com/yeremie-pando/CBA-2026_SCT/blob/e67a937220e210fc1b2db477edb0b813ac96ae9a/grafico_resultados_final%20(1)-1.png) 
 
 ---
 
