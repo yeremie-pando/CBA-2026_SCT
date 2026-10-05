@@ -8,7 +8,7 @@ Os documentos e códigos aqui presentes servem para reproduzir, analisar e expan
 
 ---
 
-## 🏗️ Arquitetura do Sistema e Metodologia
+## Arquitetura do Sistema e Metodologia
 
 O processo termohidráulico abrange um circuito de alimentação (bomba e válvula), dois tanques acoplados em cascata e um sistema de aquecimento resistivo. O projeto integra duas abordagens de controle:
 * **Regulação Contínua (Rede Foundation Fieldbus):** Responsável pelo controle PID de nível e comunicação distribuída entre transmissores e atuadores.
@@ -21,11 +21,11 @@ Para mitigar a explosão de estados gerada pelas dinâmicas acopladas, utilizou-
 
 ---
 
-## 📂 Estrutura do Repositório e Arquivos de Síntese
+## Estrutura do Repositório e Arquivos de Síntese
 
 O diretório principal e a pasta `/ED_MAX_FINAL/` contêm os artefatos de modelagem formal e os resultados da síntese. Os cálculos foram realizados nativamente no software **TCT**, sendo o projeto consolidado também disponibilizado para **Supremica** e implementado em linguagem **Ladder**.
 
-### 📌 Formato dos Arquivos
+### Formato dos Arquivos
 * **`.wmod`:** Arquivo de projeto do software **Supremica**. Ideal para visualização estrutural e simulação gráfica da malha de controle.
 * **`.DES` / `.DAT`:** Arquivos de dados descrevendo as transições e estados dos autômatos (nativos do **TCT**).
 * **`.ADS`:** Arquivos de estrutura de dados auxiliares do **TCT**.
@@ -34,7 +34,7 @@ O diretório principal e a pasta `/ED_MAX_FINAL/` contêm os artefatos de modela
 * **`LADDER_Final_v3.pdf`:** Código-fonte final estruturado em linguagem *Ladder* (incluindo *User Functions*), documentando a implementação prática da lógica no CLP da SMAR.
 * **`.pdf`, `.png` e `.GIF`:** Representações visuais (grafos) dos autômatos, facilitando a análise sem a necessidade de softwares específicos.
 
-### 🗂️ Nomenclatura e Mapeamento dos Modelos (SCT)
+### Nomenclatura e Mapeamento dos Modelos (SCT)
 Os nomes dos arquivos refletem a notação matemática adotada no artigo:
 
 * **`SIGMA` e `SIGMA_OV`:** Alfabeto de eventos ($\Sigma$), particionados em controláveis ($\Sigma_c$) e incontroláveis ($\Sigma_u$).
@@ -53,13 +53,13 @@ Os nomes dos arquivos refletem a notação matemática adotada no artigo:
 
 ---
 
-## 📊 Resultados
+## Resultados
 
 Os resultados experimentais demonstram que a ação reativa e minimamente restritiva dos supervisores modulares garante o cumprimento de todas as restrições físicas do processo (prevenção de transbordamento, esvaziamento e queima das resistências). A topologia assegura autonomia e segurança com robustez perante perturbações e limitações de comunicação inerentes a redes industriais legadas.
 
 ---
 
-## 👥 Autores
+## Autores
 
 * **Yeremie A. Pando Bravo** *(PPGEAS / UFSC)*
 * **Gustavo F. de Sousa** *(PPGEAS / UFSC)*
@@ -67,7 +67,7 @@ Os resultados experimentais demonstram que a ação reativa e minimamente restri
 
 ---
 
-## 📜 Citação
+## Citação
 
 Se utilizar os modelos ou códigos deste repositório em sua pesquisa, por favor, cite o artigo associado:
 > Pando Bravo, Y. A., de Sousa, G. F., & de Queiroz, M. H. (2026). *Síntese de Supervisores a Eventos Discretos para um Processo Industrial com Controle de Nível e Temperatura em Rede Foundation Fieldbus*. Anais do Congresso Brasileiro de Automática (CBA 2026).
